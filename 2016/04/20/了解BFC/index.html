@@ -20,7 +20,7 @@ BFC有哪些特性呢？
 什么是BFC？BFC全名block formatting context，中文译为“块级格式化上下文”。它相当于一块作用区域，在其内部的元素会受到特性的影响。并且与这个区域外部不相干。
 BFC有哪些特性呢？
 内部的boxe">
-<meta property="og:updated_time" content="2017-02-21T02:16:59.950Z">
+<meta property="og:updated_time" content="2017-02-21T04:22:33.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="了解块级格式化上下文BFC">
 <meta name="twitter:description" content="一次在网上看到一篇讲页面布局的文章，里面提到BFC这个词，本着学习精神于是乎我就上网查找看了几篇讲解BFC的文章。在这里我也根据自己的理解整理成笔记。俗话说：好记性不如烂笔头。
@@ -204,7 +204,7 @@ BFC有哪些特性呢？
 </ul>
 <pre><code><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span>&#123; <span class="attribute">width</span>:<span class="number">300px</span>; &#125;</div><div class="line"></div><div class="line"><span class="selector-class">.left</span>&#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">150px</span>;</div><div class="line">	<span class="attribute">float</span>: left;</div><div class="line">	<span class="attribute">background-color</span>: <span class="number">#f66</span>;</div><div class="line">	<span class="attribute">margin-right</span>:<span class="number">10px</span>;	<span class="comment">/*添加间距适当分开*/</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.main</span>&#123;</div><div class="line">	<span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">	<span class="attribute">background-color</span>:<span class="number">#fcc</span>;</div><div class="line">	<span class="attribute">overflow</span>:hidden;	<span class="comment">/* 建立BFC */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><ul>
-<li><strong>BFC包裹浮动（相当于清除浮动）</strong>  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<li><strong>BFC包裹浮动（清除浮动）</strong>  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <pre><code><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span>&#123; </div><div class="line">	<span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">	<span class="attribute">overflow</span>:hidden;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.box-1</span>&#123;</div><div class="line">	<span class="attribute">float</span>:left;</div><div class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">150px</span>;</div><div class="line">	<span class="attribute">background-color</span>: <span class="number">#f66</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.box-2</span>&#123;</div><div class="line">	<span class="attribute">float</span>:left;</div><div class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">150px</span>;</div><div class="line">	<span class="attribute">background-color</span>: <span class="number">#f66</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -251,6 +251,20 @@ BFC有哪些特性呢？
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2016/06/16/“简洁”的一种清除浮动方式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一种“简洁”的清除浮动方式
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 
 
@@ -404,7 +418,7 @@ BFC有哪些特性呢？
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">chiho&lt;br&gt;前端新人，目前切图仔一枚&lt;br&gt;&lt;br&gt;希望各位同行多多指教</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">chiho&lt;br&gt;前端新人，切图仔一枚&lt;br&gt;&lt;br&gt;多多指教</div>
   	  	
     	</section>
     

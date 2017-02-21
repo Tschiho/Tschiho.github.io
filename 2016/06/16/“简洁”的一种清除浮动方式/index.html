@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Tschiho.github.io">
-  <title>Archives: 2016/4 | chiho的博客</title>
+  <title>一种“简洁”的清除浮动方式 | chiho的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="东莞理工学院2015届，想成为前端工程师的小白，同时也是Eason粉。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="chiho的博客">
-<meta property="og:url" content="https://Tschiho.github.io/archives/2016/04/index.html">
+  <meta name="description" content="清除浮动的方式有多种，在这里我想记录下来的是一种简洁的，少量css的一种方式。该方法来自国外一位牛人。123456789101112131415/* 现代浏览器 */.cf:before,.cf:after&amp;#123;	content:&apos; &apos;;	display:table;&amp;#125;.cf:after&amp;#123;	clear:both;&amp;#125;/* 兼容IE6/7 */.cf&amp;#123;	*">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一种“简洁”的清除浮动方式">
+<meta property="og:url" content="https://Tschiho.github.io/2016/06/16/“简洁”的一种清除浮动方式/index.html">
 <meta property="og:site_name" content="chiho的博客">
-<meta property="og:description" content="东莞理工学院2015届，想成为前端工程师的小白，同时也是Eason粉。">
+<meta property="og:description" content="清除浮动的方式有多种，在这里我想记录下来的是一种简洁的，少量css的一种方式。该方法来自国外一位牛人。123456789101112131415/* 现代浏览器 */.cf:before,.cf:after&amp;#123;	content:&apos; &apos;;	display:table;&amp;#125;.cf:after&amp;#123;	clear:both;&amp;#125;/* 兼容IE6/7 */.cf&amp;#123;	*">
+<meta property="og:updated_time" content="2017-02-21T07:45:23.582Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chiho的博客">
-<meta name="twitter:description" content="东莞理工学院2015届，想成为前端工程师的小白，同时也是Eason粉。">
+<meta name="twitter:title" content="一种“简洁”的清除浮动方式">
+<meta name="twitter:description" content="清除浮动的方式有多种，在这里我想记录下来的是一种简洁的，少量css的一种方式。该方法来自国外一位牛人。123456789101112131415/* 现代浏览器 */.cf:before,.cf:after&amp;#123;	content:&apos; &apos;;	display:table;&amp;#125;.cf:after&amp;#123;	clear:both;&amp;#125;/* 兼容IE6/7 */.cf&amp;#123;	*">
   
     <link rel="alternative" href="/atom.xml" title="chiho的博客" type="application/atom+xml">
   
@@ -152,36 +153,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-“简洁”的一种清除浮动方式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/20/了解BFC/" class="archive-article-date">
-  	<time datetime="2016-04-20T04:07:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/20/了解BFC/">了解块级格式化上下文BFC</a>
+    <h1 class="article-title" itemprop="name">
+      一种“简洁”的清除浮动方式
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2016/06/16/“简洁”的一种清除浮动方式/" class="archive-article-date">
+  	<time datetime="2016-06-16T04:27:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>清除浮动的方式有多种，在这里我想记录下来的是一种简洁的，少量css的一种方式。<br>该方法来自国外一位牛人。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/* 现代浏览器 */</div><div class="line">.cf:before,</div><div class="line">.cf:after&#123;</div><div class="line">	content:' ';</div><div class="line">	display:table;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.cf:after&#123;</div><div class="line">	clear:both;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 兼容IE6/7 */</div><div class="line">.cf&#123;</div><div class="line">	*zoom:1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>上面用到了伪元素<strong>:before</strong>和<strong>:after</strong>,在他们上设置display为table是因为可以建立一个匿名的表单元格和一个新的BFC，因此:before可以防止发生margin折叠,而:after则是用来清除浮动。针对IE6/7,用到zoom:1触发hasLyout来包裹浮动。</p>
+<p>参考：<br><a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank" rel="external">A new micro clearfix hack</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,29 +194,43 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2016/04/20/了解BFC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">了解块级格式化上下文BFC</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -236,8 +253,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
